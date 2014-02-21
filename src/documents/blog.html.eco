@@ -1,0 +1,25 @@
+---
+layout: 'default'
+title: 'Blog'
+pageOrder: 4
+---
+
+<div class="jumbotron">
+	<div class="container">
+		<span class="logo"></span>
+		<h1>Blog</h1>
+		<h2>Blog sample text description.</h2>
+	</div> <!-- container -->
+</div>
+
+<div class="row">
+	<div class="container">
+		<nav class="linklist">
+			<% for document in @getCollection('posts').toJSON(): %>
+				<li><span><%= document.date.toDateString() %></span>
+				&raquo;
+				<a href="<%= document.url %>"><%= document.title %></a></li>
+			<% end %>
+		</nav>
+	</div> <!-- container -->
+</div> 
